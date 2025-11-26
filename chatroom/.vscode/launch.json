@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Muduo Server (Linux GDB)",
+            "type": "gdb",                // 直接指定调试器为GDB（Linux原生支持）
+            "request": "launch",
+            "program": "${workspaceFolder}/muduo_test",  // 可执行文件路径
+            "args": [],                   // 无运行参数
+            "cwd": "${workspaceFolder}",  // 运行目录
+            "preLaunchTask": "compile_muduo_test"  // 调试前先编译（关联tasks.json）
+        }
+    ]
+}

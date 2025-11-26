@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile_muduo_test",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "muduo_test.cpp",
+                "-o", "muduo_test",
+                "-std=c++11",
+                "-g",  // 调试必需：生成调试符号表
+                "-lmuduo_net",
+                "-lmuduo_base",
+                "-lboost_thread",
+                "-lpthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],  // 消除tasks.json提示
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
